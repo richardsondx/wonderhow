@@ -1,0 +1,355 @@
+/* WonderHow: big, bright, chunky kid-first styles. */
+
+:root {
+  --ink: #3a2e2a;
+  --cream: #fff8ec;
+  --paper: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: "Fredoka", "Nunito", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+button { font-family: inherit; cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ---------- chunky buttons ---------- */
+.wh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 4px solid var(--ink);
+  border-radius: 22px;
+  padding: 16px 28px;
+  font-size: 24px;
+  font-weight: 900;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  text-decoration: none;
+}
+.wh-btn:hover:not(:disabled) { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
+.wh-btn:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--ink); }
+
+.wh-btn-ghost { background: #fff; }
+.wh-btn-nav { min-width: 190px; justify-content: center; font-size: 28px; padding: 18px 30px; }
+.wh-btn-next { color: #fff; }
+.wh-btn-next span { color: #fff; }
+.wh-btn-audio { width: 92px; height: 92px; border-radius: 50%; justify-content: center; padding: 0; color: #fff; }
+
+.wh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 19px;
+  font-weight: 900;
+  background: #fff;
+}
+
+.wh-label { font-family: "Fredoka", sans-serif; }
+
+/* ---------- home ---------- */
+.home { min-height: 100vh; background: linear-gradient(180deg, #fff8ec 0%, #ffefd6 60%, #ffe7bd 100%); }
+.home-hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 24px 12px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-mascot {
+  background: #fff;
+  border: 5px solid var(--ink);
+  border-radius: 36px;
+  padding: 18px;
+  box-shadow: 8px 8px 0 var(--ink);
+  animation: bob 3.2s ease-in-out infinite;
+}
+.home-title { font-size: clamp(52px, 8vw, 92px); margin: 0; line-height: 1; }
+.home-title .w { color: #f43f2e; }
+.home-title .h { color: #2e9bf0; }
+.home-sub { font-size: 27px; font-weight: 800; margin: 14px 0 26px; max-width: 560px; }
+.home-cta { display: flex; gap: 18px; flex-wrap: wrap; }
+
+.home-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 36px 24px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+.story-card {
+  border: 5px solid var(--ink);
+  border-radius: 30px;
+  padding: 26px;
+  box-shadow: 8px 8px 0 var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  transition: transform 0.1s ease;
+  background: #fff;
+  width: 100%;
+}
+.story-card:hover { transform: translate(-3px, -3px) rotate(-0.5deg); }
+.story-card:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--ink); }
+.story-icon {
+  width: 96px; height: 96px;
+  border: 4px solid var(--ink);
+  border-radius: 28px;
+  display: flex; align-items: center; justify-content: center;
+}
+.story-title { font-size: 34px; margin: 0; }
+.story-q { font-size: 22px; font-weight: 800; margin: 0; opacity: 0.85; }
+.story-blurb { font-size: 20px; margin: 0; font-weight: 600; }
+.story-meta { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+
+.ask-band {
+  max-width: 1080px;
+  margin: 10px auto 70px;
+  padding: 0 24px;
+}
+.ask-card {
+  border: 5px solid var(--ink);
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 34px;
+}
+.ask-card h2 { font-size: 40px; margin: 0 0 8px; }
+.ask-card p { font-size: 22px; font-weight: 700; margin: 0 0 20px; }
+.ask-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.ask-input {
+  flex: 1 1 320px;
+  border: 4px solid var(--ink);
+  border-radius: 20px;
+  padding: 18px 22px;
+  font-size: 24px;
+  font-weight: 800;
+  font-family: inherit;
+  background: #fffbeF;
+  min-width: 0;
+}
+.ask-input:focus { outline: 4px solid #ffd93d; }
+.ask-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.ask-chips button {
+  border: 3px solid var(--ink);
+  background: #fff;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.ask-chips button:hover { transform: translate(-1px, -1px); }
+
+.home-foot { text-align: center; padding: 0 24px 50px; font-size: 18px; font-weight: 700; opacity: 0.7; }
+
+/* ---------- player ---------- */
+.player { min-height: 100vh; padding-bottom: 60px; }
+.player-top {
+  max-width: 1180px; margin: 0 auto; padding: 22px 24px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.mode-toggle { display: flex; border: 4px solid var(--ink); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 5px 5px 0 var(--ink); }
+.mode-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: none; background: #fff; padding: 14px 22px;
+  font-size: 21px; font-weight: 900; color: var(--ink);
+}
+.mode-btn.on { color: #fff; }
+.mode-btn + .mode-btn { border-left: 4px solid var(--ink); }
+
+.player-head {
+  max-width: 1180px; margin: 0 auto; padding: 26px 24px 6px;
+  display: flex; gap: 22px; align-items: center;
+}
+.player-icon {
+  width: 104px; height: 104px; border: 5px solid var(--ink); border-radius: 30px;
+  display: flex; align-items: center; justify-content: center; flex: none;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.player-title { font-size: clamp(38px, 5vw, 58px); margin: 0; line-height: 1.05; }
+.player-question { font-size: 24px; font-weight: 800; margin: 6px 0 10px; opacity: 0.8; }
+
+.player-main {
+  max-width: 1180px; margin: 0 auto; padding: 18px 24px 0;
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; align-items: start;
+}
+@media (max-width: 960px) { .player-main { grid-template-columns: 1fr; } }
+
+.scene-card {
+  border: 5px solid var(--ink);
+  border-radius: 32px;
+  box-shadow: 8px 8px 0 var(--ink);
+  overflow: hidden;
+  position: sticky;
+  top: 18px;
+}
+@media (max-width: 960px) { .scene-card { position: static; } }
+.wh-scene { display: block; width: 100%; height: auto; }
+
+.step-card {
+  border: 5px solid var(--ink);
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 30px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.step-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.voice-chip { background: #fff8d6; }
+.step-title { font-size: 42px; margin: 0; line-height: 1.1; }
+.step-say { font-size: 29px; line-height: 1.45; font-weight: 700; margin: 0; }
+
+.grownup {
+  border: 3px dashed var(--ink);
+  border-radius: 20px;
+  padding: 16px 20px;
+  background: #faf7ef;
+  font-size: 20px;
+  font-weight: 600;
+}
+.grownup.big { font-size: 24px; background: #fff8d6; }
+.grownup-label { display: block; font-size: 17px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; opacity: 0.7; }
+.grownup p { margin: 6px 0; }
+.grownup-fact { border-top: 2px dashed var(--ink); padding-top: 10px; margin-top: 10px; }
+
+.audio-row { display: flex; gap: 14px; align-items: center; }
+.dots { display: flex; gap: 12px; justify-content: center; padding: 6px 0; }
+.dot { width: 26px; height: 26px; border-radius: 50%; border: 3px solid var(--ink); background: #fff; padding: 0; }
+.dot.done { background: #c9e7c0; }
+.nav-row { display: flex; gap: 16px; justify-content: space-between; }
+
+/* ---------- ask page ---------- */
+.ask-page { min-height: 100vh; background: linear-gradient(180deg, #f3e9ff 0%, #fff8ec 70%); padding-bottom: 60px; }
+.ask-wrap { max-width: 1180px; margin: 0 auto; padding: 26px 24px 0; }
+.ask-thinking {
+  border: 5px solid var(--ink); border-radius: 30px; background: #fff;
+  box-shadow: 8px 8px 0 var(--ink); padding: 50px 30px; text-align: center;
+  display: flex; flex-direction: column; gap: 18px; align-items: center; margin-top: 26px;
+}
+.ask-thinking h2 { font-size: 40px; margin: 0; }
+.ask-thinking p { font-size: 23px; font-weight: 700; margin: 0; }
+.think-owl { animation: bob 1.6s ease-in-out infinite; }
+.ask-error {
+  margin-top: 26px; border: 5px solid var(--ink); border-radius: 24px;
+  background: #ffe3e3; padding: 24px 28px; font-size: 24px; font-weight: 800;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* ---------- scene animations ---------- */
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes wheelspin { to { transform: rotate(360deg); } }
+@keyframes drive { 0% { transform: translateX(0); } 50% { transform: translateX(26px); } 100% { transform: translateX(0); } }
+@keyframes truckbob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes tankfill { from { } to { } }
+@keyframes pipeflow { to { stroke-dashoffset: -64; } }
+@keyframes piston { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(16px); } }
+@keyframes sparkpop { 0% { transform: scale(0.4) rotate(-12deg); opacity: 0; } 40% { transform: scale(1.25) rotate(8deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+@keyframes lampglow { 0%, 100% { filter: drop-shadow(0 0 6px #ffd93d); } 50% { filter: drop-shadow(0 0 22px #ffd93d); } }
+@keyframes airflow { to { stroke-dashoffset: -80; } }
+@keyframes speedlines { 0% { transform: translateX(0); opacity: 0.9; } 100% { transform: translateX(-70px); opacity: 0; } }
+@keyframes puffs { 0% { transform: translateX(0) scale(0.8); opacity: 0.9; } 100% { transform: translateX(-46px) scale(1.25); opacity: 0; } }
+@keyframes lightred { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.25; } }
+@keyframes lightblue { 0%, 49% { opacity: 0.25; } 50%, 100% { opacity: 1; } }
+@keyframes pumpspin { to { transform: rotate(360deg); } }
+@keyframes waterarc { to { stroke-dashoffset: -56; } }
+@keyframes fireshrink { to { transform: scale(0.55); } }
+@keyframes ladder { from { } to { } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-90px); opacity: 0; } }
+@keyframes heat { 0%, 100% { transform: translateY(0); opacity: 0.9; } 50% { transform: translateY(-8px); opacity: 0.5; } }
+@keyframes cloudpop { 0% { transform: scale(0.6); } 60% { transform: scale(1.08); } 100% { transform: scale(1); } }
+@keyframes raindrop { 0% { transform: translateY(-14px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(26px); opacity: 0; } }
+@keyframes waves { 0% { transform: translateX(0); } 100% { transform: translateX(-80px); } }
+@keyframes riverflow { to { stroke-dashoffset: -104; } }
+@keyframes sunspin { to { transform: rotate(360deg); } }
+@keyframes seedwake { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(7deg) scale(1.05); } }
+@keyframes rootgrow { from { stroke-dashoffset: 220; } to { stroke-dashoffset: 0; } }
+@keyframes stemgrow { from { transform: scaleY(0.15); } to { transform: scaleY(1); } }
+@keyframes bloom { 0% { transform: scale(0.3) rotate(-30deg); opacity: 0; } 60% { transform: scale(1.12) rotate(6deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+@keyframes beemove { 0% { transform: translate(560px, 120px); } 25% { transform: translate(470px, 90px); } 50% { transform: translate(540px, 150px); } 75% { transform: translate(430px, 130px); } 100% { transform: translate(560px, 120px); } }
+@keyframes wing { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4); } }
+@keyframes sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-26px); } }
+@keyframes spinslow { to { transform: rotate(360deg); } }
+@keyframes bouncesoft { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.03); } }
+@keyframes pulsebig { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+
+.bob { animation: bob 2.6s ease-in-out infinite; }
+.sun-rays { animation: sunspin 14s linear infinite; transform-origin: 700px 80px; }
+.sun-spin { animation: sunspin 16s linear infinite; }
+.wheel-spin { animation: wheelspin 0.7s linear infinite; }
+.car-drive { animation: drive 1.6s ease-in-out infinite; }
+.car-idle { animation: bob 3s ease-in-out infinite; }
+.truck-bob { animation: truckbob 2.8s ease-in-out infinite; }
+.tank-fill { transition: y 0.8s ease, height 0.8s ease; }
+.pipe-flow { animation: pipeflow 0.9s linear infinite; }
+.piston { animation: piston 0.5s ease-in-out infinite; }
+.spark { animation: sparkpop 0.7s ease-out infinite; transform-origin: 660px 330px; }
+.lamp-glow { animation: lampglow 1.4s ease-in-out infinite; }
+.airflow path { animation: airflow 0.8s linear infinite; }
+.speedlines line { animation: speedlines 0.7s linear infinite; }
+.speedlines line:nth-child(2) { animation-delay: 0.2s; }
+.speedlines line:nth-child(3) { animation-delay: 0.4s; }
+.puffs circle { animation: puffs 1.2s ease-out infinite; }
+.puffs circle:nth-child(2) { animation-delay: 0.35s; }
+.puffs circle:nth-child(3) { animation-delay: 0.7s; }
+.light-red { animation: lightred 0.9s steps(1) infinite; }
+.light-blue { animation: lightblue 0.9s steps(1) infinite; }
+.pump-spin { animation: pumpspin 0.8s linear infinite; }
+.water-arc path { animation: waterarc 0.7s linear infinite; }
+.fire-big { animation: sway 1.1s ease-in-out infinite; }
+.fire-small { animation: fireshrink 0.8s ease forwards, sway 1.1s ease-in-out infinite; }
+.ladder { transition: y 0.9s ease, height 0.9s ease; }
+.rise { animation: rise 2.4s ease-in infinite; }
+.heat path { animation: heat 1.8s ease-in-out infinite; }
+.heat path:nth-child(2) { animation-delay: 0.4s; }
+.heat path:nth-child(3) { animation-delay: 0.8s; }
+.cloud-pop { animation: cloudpop 0.9s ease-out; }
+.rain line { animation: raindrop 0.9s linear infinite; }
+.rain line:nth-child(2n) { animation-delay: 0.3s; }
+.rain line:nth-child(3n) { animation-delay: 0.55s; }
+.waves { animation: waves 5s linear infinite; }
+.river-flow { animation: riverflow 1.4s linear infinite; }
+.seed-wake { animation: seedwake 1.6s ease-in-out infinite; }
+.root-grow path { stroke-dasharray: 220; animation: rootgrow 1.6s ease-out forwards; }
+.root-grow path:nth-child(2) { animation-delay: 0.3s; }
+.root-grow path:nth-child(3) { animation-delay: 0.6s; }
+.stem-grow { animation: stemgrow 1.2s ease-out; }
+.bloom { animation: bloom 1.1s ease-out; }
+.bee { animation: beemove 7s ease-in-out infinite; }
+.wing { animation: wing 0.25s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.sway { animation: sway 2.4s ease-in-out infinite; }
+.stage-anim-float { animation: floaty 3s ease-in-out infinite; }
+.stage-anim-spin-slow { animation: spinslow 12s linear infinite; }
+.stage-anim-bounce-soft { animation: bouncesoft 2.2s ease-in-out infinite; }
+.stage-anim-sway { animation: sway 2.6s ease-in-out infinite; }
+.stage-anim-pulse-big { animation: pulsebig 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wh-scene * { animation: none !important; }
+}
