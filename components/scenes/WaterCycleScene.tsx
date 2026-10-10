@@ -109,7 +109,7 @@ export default function WaterCycleScene({ step }: { step: number }) {
         {step === 0 && <text x="200" y="415" textAnchor="middle">the ocean</text>}
         {step === 1 && <text x="400" y="215" textAnchor="middle">floating up!</text>}
         {step === 2 && <text x="560" y="235" textAnchor="middle">a fluffy cloud</text>}
-        {step === 3 && <text x="560" y="375" textAnchor="middle">plip plop!</text>}
+        {step === 3 && <text x="560" y="375" textAnchor="middle">rain falls</text>}
         {step === 4 && <text x="480" y="330" textAnchor="middle">back to the sea</text>}
       </g>
     </svg>

@@ -53,7 +53,7 @@ export default function PlantScene({ step }: { step: number }) {
         <g className={step === 1 ? "seed-wake" : ""} style={{ transformOrigin: "400px 400px" }}>
           <ellipse cx="400" cy="400" rx="34" ry="26" fill="#C98A4B" stroke={INK} strokeWidth="6" />
           <path d="M388 392 q10 -8 22 -2" fill="none" stroke={INK} strokeWidth="5" strokeLinecap="round" />
-          {step === 0 && <text x="400" y="300" textAnchor="middle" fontSize="26" fontWeight="800" fill={INK} className="wh-label">shhh... sleeping</text>}
+          {step === 0 && <text x="400" y="300" textAnchor="middle" fontSize="26" fontWeight="800" fill={INK} className="wh-label">a seed waits</text>}
         </g>
       )}
 
@@ -104,10 +104,10 @@ export default function PlantScene({ step }: { step: number }) {
 
       {/* step labels */}
       <g fontSize="22" fontWeight="800" fill={INK} className="wh-label">
-        {step === 1 && <text x="400" y="285" textAnchor="middle">plip plop!</text>}
-        {step === 2 && <text x="400" y="285" textAnchor="middle">a root holds on tight</text>}
-        {step === 3 && <text x="400" y="130" textAnchor="middle">hello, leaves!</text>}
-        {step === 4 && <text x="400" y="90" textAnchor="middle">POP! a flower!</text>}
+        {step === 1 && <text x="400" y="285" textAnchor="middle">rain falls</text>}
+        {step === 2 && <text x="400" y="285" textAnchor="middle">the root grows down</text>}
+        {step === 3 && <text x="400" y="130" textAnchor="middle">first leaves</text>}
+        {step === 4 && <text x="400" y="90" textAnchor="middle">a flower opens</text>}
       </g>
     </svg>
   );

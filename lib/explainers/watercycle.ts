@@ -3,8 +3,8 @@ import type { ExplainerDef } from "../explainers.ts";
 export const waterCycle: ExplainerDef = {
   slug: "water-cycle",
   title: "The Water Cycle",
-  question: "Where does rain come from?",
-  blurb: "Follow a tiny drop on the greatest round trip ever!",
+  question: "Where does rain come from, and where does it go?",
+  blurb: "Follow one drop of water on the greatest round trip on Earth.",
   icon: "CloudRain",
   theme: {
     bg: "#EDF7FF",
@@ -15,49 +15,49 @@ export const waterCycle: ExplainerDef = {
   },
   steps: [
     {
-      title: "Hello, ocean!",
+      title: "It starts with the sun",
       sayIt:
-        "Down below is the big blue ocean. Up above shines the warm sun. Watch what the sunshine does to the water. It is the start of the greatest round trip ever!",
+        "Almost all of Earth's water sits in the oceans, and it would just sit there forever if not for the sun. The sun's heat is the engine of the entire water cycle. Watch what sunlight does to the surface of the sea, because that is where every raindrop's journey begins.",
       grownUp:
-        "About 97 percent of Earth's water is in the oceans. The sun's heat powers the entire water cycle.",
+        "About 97 percent of Earth's water is in the oceans. The sun evaporates roughly 500,000 cubic kilometers of ocean water every year.",
       voiceText:
-        "Down below is the big blue ocean. Up above shines the warm sun. Watch what the sunshine does to the water. It is the start of the greatest round trip ever!",
+        "Almost all of Earth's water sits in the oceans, and it would just sit there forever if not for the sun. The sun's heat is the engine of the entire water cycle. Watch what sunlight does to the surface of the sea, because that is where every raindrop's journey begins.",
     },
     {
-      title: "Up, up they float!",
+      title: "Water learns to fly",
       sayIt:
-        "The sun warms the water, and teeny tiny drops float up, up, up into the sky. They are too small to see! This is called evaporation. Can you say it? E-vap-o-ra-tion!",
+        "Heat gives water molecules energy, and the fastest ones break free into the air as an invisible gas called water vapor. This is evaporation. You cannot see it happening, but on a hot day a swimming pool can lose several centimeters of water straight into the sky.",
       grownUp:
-        "Evaporation: heat turns liquid water into invisible water vapor that rises into the air. Warm oceans evaporate enormous amounts every day.",
+        "Evaporation is why wet pavement dries and why puddles vanish. Plants also release vapor through their leaves, called transpiration.",
       voiceText:
-        "The sun warms the water, and teeny tiny drops float up, up, up into the sky. They are too small to see! This is called evaporation. Can you say it? E-vap-o-ra-tion!",
+        "Heat gives water molecules energy, and the fastest ones break free into the air as an invisible gas called water vapor. This is evaporation. You cannot see it happening, but on a hot day a swimming pool can lose several centimeters of water straight into the sky.",
     },
     {
-      title: "Clouds are born!",
+      title: "Clouds are built drop by drop",
       sayIt:
-        "High in the sky, the tiny drops get cold and huddle together. They make a fluffy cloud! A cloud is just a crowd of tiny water drops holding hands.",
+        "High up, the air is cold. The vapor cools and clings to microscopic dust particles, turning back into liquid, millions of droplets too small to see alone. A cloud is exactly that: a floating crowd of tiny water droplets, each one too light to fall.",
       grownUp:
-        "Condensation: high up, vapor cools and condenses onto tiny dust particles, forming the droplets that make clouds.",
+        "This step is called condensation. Cloud droplets are about 100 times smaller than a raindrop, which is why they can float.",
       voiceText:
-        "High in the sky, the tiny drops get cold and huddle together. They make a fluffy cloud! A cloud is just a crowd of tiny water drops holding hands.",
+        "High up, the air is cold. The vapor cools and clings to microscopic dust particles, turning back into liquid, millions of droplets too small to see alone. A cloud is exactly that: a floating crowd of tiny water droplets, each one too light to fall.",
     },
     {
-      title: "Plip, plop, rain!",
+      title: "When clouds get heavy",
       sayIt:
-        "The cloud gets too full and heavy. Plip! Plop! The drops fall back down as rain. Hold out your hand. Can you feel the raindrops?",
+        "Droplets keep colliding and merging inside the cloud until they grow too heavy to float. Then gravity wins, and they fall as rain. Scientists call this precipitation, and it includes snow, sleet, and hail: the same trip, just with the water frozen.",
       grownUp:
-        "Precipitation: when cloud droplets grow heavy enough, gravity pulls them down as rain (or snow, sleet, or hail).",
+        "A raindrop falls at roughly 20 kilometers per hour. A single thunderstorm can drop billions of liters of water.",
       voiceText:
-        "The cloud gets too full and heavy. Plip! Plop! The drops fall back down as rain. Hold out your hand. Can you feel the raindrops?",
+        "Droplets keep colliding and merging inside the cloud until they grow too heavy to float. Then gravity wins, and they fall as rain. Scientists call this precipitation, and it includes snow, sleet, and hail: the same trip, just with the water frozen.",
     },
     {
-      title: "Round and round!",
+      title: "Round and round, forever",
       sayIt:
-        "The rain splashes into rivers that run all the way back to the ocean. And then the sun starts it all over again! The water goes round and round, forever and ever. You did it!",
+        "Rain lands on mountains and gathers into streams, then rivers, then flows all the way back to the ocean, where the sun starts the journey again. The water in your glass is billions of years old. It has made this trip more times than anyone could ever count.",
       grownUp:
-        "Collection: rain gathers in rivers, lakes, and groundwater, flowing back to the sea. The water in your glass is billions of years old and has made this trip countless times.",
+        "This final step is collection. Some rain soaks into groundwater and may stay underground for thousands of years before returning.",
       voiceText:
-        "The rain splashes into rivers that run all the way back to the ocean. And then the sun starts it all over again! The water goes round and round, forever and ever. You did it!",
+        "Rain lands on mountains and gathers into streams, then rivers, then flows all the way back to the ocean, where the sun starts the journey again. The water in your glass is billions of years old. It has made this trip more times than anyone could ever count.",
     },
   ],
 };

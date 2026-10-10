@@ -86,7 +86,7 @@ export default function FireTruckScene({ step }: { step: number }) {
           rx="8" fill="#2E9BF0" className="tank-fill"
         />
         <text x="225" y="292" textAnchor="middle" fontSize="20" fontWeight="800" fill={INK} className="wh-label">
-          {step === 1 ? "GLUG GLUG" : "water tank"}
+          {step === 1 ? "filling up" : "water tank"}
         </text>
         {/* pump */}
         <circle cx="360" cy="322" r="30" fill="#fff" stroke={INK} strokeWidth="6" />

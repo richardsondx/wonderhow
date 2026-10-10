@@ -22,7 +22,7 @@ type Generated = {
   question: string;
   icon: string;
   color: string;
-  steps: PlayerStep[];
+  steps: (PlayerStep & { art: string })[];
 };
 
 function AskInner() {
@@ -32,8 +32,32 @@ function AskInner() {
   const [topic, setTopic] = useState(initial);
   const [state, setState] = useState<"idle" | "thinking" | "ready" | "error">("idle");
   const [gen, setGen] = useState<Generated | null>(null);
+  const [images, setImages] = useState<(string | null)[]>([]);
   const [error, setError] = useState("");
   const ranFor = useRef<string>("");
+
+  const drawPictures = useCallback((steps: { art: string }[]) => {
+    setImages(new Array(steps.length).fill(null));
+    steps.forEach((s, i) => {
+      if (!s.art) return;
+      fetch("/api/illustrate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: s.art }),
+      })
+        .then((r) => r.json())
+        .then((d) => {
+          if (d.url) {
+            setImages((prev) => {
+              const next = [...prev];
+              next[i] = d.url as string;
+              return next;
+            });
+          }
+        })
+        .catch(() => {});
+    });
+  }, []);
 
   const explain = useCallback(async (t: string) => {
     const clean = t.trim();
@@ -50,11 +74,12 @@ function AskInner() {
       if (!res.ok) throw new Error(data.error || "failed");
       setGen(data);
       setState("ready");
+      drawPictures(data.steps);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong");
       setState("error");
     }
-  }, []);
+  }, [drawPictures]);
 
   useEffect(() => {
     if (initial && ranFor.current !== initial) {
@@ -66,7 +91,7 @@ function AskInner() {
   if (state === "ready" && gen) {
     const theme = THEMES[gen.color] ?? THEMES.purple;
     const Scene = ({ step }: { step: number }) => (
-      <StoryStage step={step} icon={gen.icon} tint={theme.scene} />
+      <StoryStage step={step} icon={gen.icon} tint={theme.scene} image={images[step] ?? null} />
     );
     return (
       <ExplainerPlayer

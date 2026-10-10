@@ -4,7 +4,7 @@ export const plant: ExplainerDef = {
   slug: "plant",
   title: "How a Plant Grows",
   question: "How does a tiny seed become a flower?",
-  blurb: "Plant a seed and watch it stretch toward the sun!",
+  blurb: "From a sleeping seed to a blooming flower, powered by sunlight.",
   icon: "Sprout",
   theme: {
     bg: "#F0F9E8",
@@ -15,49 +15,49 @@ export const plant: ExplainerDef = {
   },
   steps: [
     {
-      title: "A tiny seed!",
+      title: "A plant in a package",
       sayIt:
-        "This little seed is sleeping in the soil. Inside it hides a whole plant, curled up like you in your blanket! It is waiting for three special things. Let us find out what they are!",
+        "A seed is a survival package: a tiny baby plant called an embryo, packed with stored food, wrapped in a tough protective coat. It can wait months or even years, completely still, until three conditions arrive: water, warmth, and air.",
       grownUp:
-        "A seed contains a tiny embryo plant plus stored food, wrapped in a protective coat. It stays dormant until conditions are right.",
+        "Seeds stay dormant thanks to hormones that block growth. Some desert seeds wait decades for a single good rain.",
       voiceText:
-        "This little seed is sleeping in the soil. Inside it hides a whole plant, curled up like you in your blanket! It is waiting for three special things. Let us find out what they are!",
+        "A seed is a survival package: a tiny baby plant called an embryo, packed with stored food, wrapped in a tough protective coat. It can wait months or even years, completely still, until three conditions arrive: water, warmth, and air.",
     },
     {
-      title: "Drink, seed, drink!",
+      title: "Water wakes it up",
       sayIt:
-        "First, water! Plip plop, rain soaks the soil. The seed drinks it all up and wakes up. Good morning, little seed! Water is special thing number one.",
+        "Rain soaks through the seed coat and the embryo wakes. Scientists call this germination. The seed swells as it drinks, and it burns through its packed lunch of stored food for energy, because it cannot make its own food yet.",
       grownUp:
-        "Water softens the seed coat and wakes the embryo. This first step is called germination, and it needs moisture, warmth, and air.",
+        "The first visible sign of germination is the root tip breaking through the coat, usually within days for most garden seeds.",
       voiceText:
-        "First, water! Plip plop, rain soaks the soil. The seed drinks it all up and wakes up. Good morning, little seed! Water is special thing number one.",
+        "Rain soaks through the seed coat and the embryo wakes. Scientists call this germination. The seed swells as it drinks, and it burns through its packed lunch of stored food for energy, because it cannot make its own food yet.",
     },
     {
-      title: "Hello, sunshine!",
+      title: "Roots go down first",
       sayIt:
-        "Next, sunshine! The warm sun hugs the soil. The seed feels cozy and starts to stretch. Something pointy pokes out. A root! It grows down, down to hold on tight. That is special thing number two!",
+        "The first thing out of the seed is the root, and it always grows downward, pulled by gravity. Roots do two jobs at once: they anchor the plant so wind cannot topple it, and they drink water and minerals from the soil.",
       grownUp:
-        "The first root (radicle) grows downward, anchoring the plant and drinking water from the soil. Roots grow toward gravity and moisture.",
+        "Roots can sense gravity using tiny starch grains that settle to the bottom of their cells, like a built-in level.",
       voiceText:
-        "Next, sunshine! The warm sun hugs the soil. The seed feels cozy and starts to stretch. Something pointy pokes out. A root! It grows down, down to hold on tight. That is special thing number two!",
+        "The first thing out of the seed is the root, and it always grows downward, pulled by gravity. Roots do two jobs at once: they anchor the plant so wind cannot topple it, and they drink water and minerals from the soil.",
     },
     {
-      title: "Up it sprouts!",
+      title: "The shoot chases the light",
       sayIt:
-        "Up, up, up! A green sprout pushes through the soil toward the light. It opens two tiny leaves, like little hands waving hello to the sun! The leaves catch sunshine to make food. That is special thing number three!",
+        "Next, a shoot pushes upward toward the light and unfolds its first leaves. Leaves are solar panels. Using sunlight, water, and air, they cook up sugar, which is the plant's food. This sunlight cooking has a name: photosynthesis.",
       grownUp:
-        "Leaves capture sunlight for photosynthesis, turning light, water, and air into sugar (food) for the plant. This is why plants grow toward light.",
+        "Photosynthesis also releases the oxygen we breathe. A large tree can produce enough oxygen for two people for a year.",
       voiceText:
-        "Up, up, up! A green sprout pushes through the soil toward the light. It opens two tiny leaves, like little hands waving hello to the sun! The leaves catch sunshine to make food. That is special thing number three!",
+        "Next, a shoot pushes upward toward the light and unfolds its first leaves. Leaves are solar panels. Using sunlight, water, and air, they cook up sugar, which is the plant's food. This sunlight cooking has a name: photosynthesis.",
     },
     {
-      title: "A flower blooms!",
+      title: "Flowers make more seeds",
       sayIt:
-        "The stem grows taller and taller, and POP! A beautiful flower opens! Buzzing bees come to visit. And inside the flower, brand new seeds are growing. The circle starts all over again!",
+        "A grown plant flowers to reproduce. Bright petals and sweet nectar attract bees, which carry a golden dust called pollen between flowers. After pollination, the flower grows fruit with brand-new seeds inside. And then the whole cycle begins again, with you knowing exactly how.",
       grownUp:
-        "Flowers attract pollinators like bees; pollination lets the plant make seeds. A sunflower can grow taller than a grown-up in a single summer.",
+        "A sunflower can grow over 3 meters tall in a single summer, and one flower head can hold up to 2,000 seeds.",
       voiceText:
-        "The stem grows taller and taller, and POP! A beautiful flower opens! Buzzing bees come to visit. And inside the flower, brand new seeds are growing. The circle starts all over again!",
+        "A grown plant flowers to reproduce. Bright petals and sweet nectar attract bees, which carry a golden dust called pollen between flowers. After pollination, the flower grows fruit with brand-new seeds inside. And then the whole cycle begins again, with you knowing exactly how.",
     },
   ],
 };

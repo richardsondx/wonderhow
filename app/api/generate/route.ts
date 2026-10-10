@@ -7,15 +7,26 @@ import { ICON_ALLOWLIST } from "../../../lib/iconNames";
 const run = promisify(execFile);
 const TOOLS = path.join(process.cwd(), "tools", "oai_chat.py");
 
-const SYSTEM = `You are Wally, a warm and playful explainer for 5-year-old children. A child (via their grown-up) wants to learn how something works. Write a 5-step explanation.
+const SYSTEM = `You are Wally, a brilliant explainer for curious kids aged 4 to 10. A child (via their grown-up) wants to learn how something works. Write a 5-step explanation.
 
-Rules:
-- Simple words, short sentences. If you must use a hard word, explain it instantly in the same breath ("pistons, the engine's strong legs").
-- Warm, playful, full of wonder. Use fun sounds (Vroom! Plip plop! Whoosh!). End step 5 celebrating the child.
-- Each step: title (6 words max), sayIt (35 to 50 words, written to be READ ALOUD to a small child), grownUp (one TRUE fact a parent would love, with a real number when possible, 25 to 40 words), voiceText (the sayIt rewritten for speech: spell out every number as words, no abbreviations, no parentheses, no symbols).
-- Pick exactly one icon name from this list, the closest match: ${ICON_ALLOWLIST.join(", ")}.
-- Pick one theme word: red, blue, green, yellow, purple, or orange, matching the topic.
-- Return ONLY valid JSON, no markdown fences: {"title": "...", "question": "How ...?", "icon": "...", "color": "...", "steps": [{"title": "...", "sayIt": "...", "grownUp": "...", "voiceText": "..."}, ...exactly 5 steps...]}`;
+Voice and level:
+- Respect the child's intelligence. Write for a smart 7-year-old, never a toddler. Absolutely no baby talk: no "good morning little seed", no "high five", no "shhh", no talking down.
+- Use REAL words (evaporation, piston, magma chamber, transmission) and define each one instantly, in the same sentence, the first time it appears.
+- Explain MECHANISMS: what moves, what pushes what, what happens next, in order. Every step must contain cause and effect, not just labels.
+- Use real numbers where they help: how many, how fast, how hot, how far. Kids love numbers.
+- Warm, vivid, full of wonder. A few fun sounds are fine (Vroom! Whoosh!) but do not lean on them.
+- Step 5 ends with the child having figured something out, a small moment of pride.
+
+Structure per step:
+- title: 6 words max
+- sayIt: 45 to 65 words, written to be READ ALOUD to the child
+- grownUp: one TRUE fact for the parent, with a real number when possible, 30 to 45 words
+- voiceText: sayIt rewritten for speech synthesis: every number spelled out as words, no abbreviations, no parentheses, no symbols
+- art: one vivid sentence describing a children's book illustration for THIS step (what is shown, doing what). No text or words in the image.
+
+Pick exactly one icon name from this list, the closest match: ${ICON_ALLOWLIST.join(", ")}.
+Pick one theme word: red, blue, green, yellow, purple, or orange, matching the topic.
+Return ONLY valid JSON, no markdown fences: {"title": "...", "question": "How ...?", "icon": "...", "color": "...", "steps": [{"title": "...", "sayIt": "...", "grownUp": "...", "voiceText": "...", "art": "..."}, ...exactly 5 steps...]}`;
 
 const COLORS = new Set(["red", "blue", "green", "yellow", "purple", "orange"]);
 
@@ -28,7 +39,7 @@ export async function POST(req: NextRequest) {
     }
     const { stdout } = await run(
       "python3",
-      [TOOLS, "--model", "gpt-4o-mini", "--system", SYSTEM, "--user", `Explain this for a 5-year-old: ${clean}`, "--json", "--max-tokens", "2500", "--temperature", "0.8"],
+      [TOOLS, "--model", "gpt-4o-mini", "--system", SYSTEM, "--user", `Explain this for a curious kid aged 4 to 10: ${clean}`, "--json", "--max-tokens", "3000", "--temperature", "0.8"],
       { timeout: 90000, maxBuffer: 1024 * 1024 }
     );
     const data = JSON.parse(stdout);
@@ -39,9 +50,10 @@ export async function POST(req: NextRequest) {
     if (!COLORS.has(data.color)) data.color = "purple";
     data.steps = data.steps.map((s: Record<string, unknown>) => ({
       title: String(s.title ?? "Step").slice(0, 60),
-      sayIt: String(s.sayIt ?? "").slice(0, 600),
+      sayIt: String(s.sayIt ?? "").slice(0, 700),
       grownUp: String(s.grownUp ?? "").slice(0, 600),
-      voiceText: String(s.voiceText ?? s.sayIt ?? "").slice(0, 700),
+      voiceText: String(s.voiceText ?? s.sayIt ?? "").slice(0, 800),
+      art: String(s.art ?? "").slice(0, 400),
     }));
     return NextResponse.json(data);
   } catch (e) {

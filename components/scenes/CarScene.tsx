@@ -79,7 +79,7 @@ export default function CarScene({ step }: { step: number }) {
             rx="8" fill="#2E9BF0" className="tank-fill"
           />
           <text x="164" y="304" textAnchor="middle" fontSize="21" fontWeight="800" fill={INK} className="wh-label">
-            {step === 1 ? "GLUG GLUG!" : "tank"}
+            {step === 1 ? "filling up" : "fuel tank"}
           </text>
         </g>
 

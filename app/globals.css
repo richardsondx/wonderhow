@@ -209,6 +209,18 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
 @media (max-width: 960px) { .scene-card { position: static; } }
 .wh-scene { display: block; width: 100%; height: auto; }
 
+/* generated story illustrations */
+.story-illus { position: relative; }
+.story-illus img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.story-illus-badge {
+  position: absolute; left: 22px; bottom: 22px;
+  width: 76px; height: 76px; border-radius: 50%;
+  background: #FFD93D; border: 5px solid var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.story-illus-badge span { font-family: "Fredoka", sans-serif; font-size: 40px; font-weight: 700; }
+
 .step-card {
   border: 5px solid var(--ink);
   border-radius: 32px;
