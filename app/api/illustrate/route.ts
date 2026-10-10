@@ -6,9 +6,11 @@ import path from "path";
 
 const MODEL = "gpt-image-2.5-flare";
 const STYLE =
-  "Children's book illustration for ages 6 to 10. Flat vector style, bold thick dark outlines, " +
-  "bright saturated colors, simple clear shapes, cheerful and dramatic, absolutely no text, " +
-  "no words, no letters, no numbers.";
+  "Warm high-quality children's cartoon illustration in the style of modern Australian kids' TV animation " +
+  "(think Bluey): soft rounded organic shapes, gentle hand-drawn warmth, expressive simple characters with " +
+  "kind faces, clean uncluttered cinematic compositions, warm natural color palette with soft painterly " +
+  "shading and subtle gradients, cozy backgrounds with depth, never flat clip-art, never neon, " +
+  "absolutely no text, no words, no letters, no numbers.";
 
 function illustrate(prompt: string, out: string): Promise<string> {
   return new Promise((resolve, reject) => {

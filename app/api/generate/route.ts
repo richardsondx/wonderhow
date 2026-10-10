@@ -22,7 +22,7 @@ Structure per step:
 - sayIt: 45 to 65 words, written to be READ ALOUD to the child
 - grownUp: one TRUE fact for the parent, with a real number when possible, 30 to 45 words
 - voiceText: sayIt rewritten for speech synthesis: every number spelled out as words, no abbreviations, no parentheses, no symbols
-- art: one vivid sentence describing a children's book illustration for THIS step (what is shown, doing what). No text or words in the image.
+- art: one vivid sentence describing a warm modern cartoon illustration (Bluey-style: soft rounded shapes, gentle, cinematic) for THIS step (what is shown, doing what). No text or words in the image.
 
 Pick exactly one icon name from this list, the closest match: ${ICON_ALLOWLIST.join(", ")}.
 Pick one theme word: red, blue, green, yellow, purple, or orange, matching the topic.

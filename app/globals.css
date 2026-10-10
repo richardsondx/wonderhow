@@ -41,6 +41,7 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   box-shadow: 6px 6px 0 var(--ink);
   transition: transform 0.08s ease, box-shadow 0.08s ease;
   text-decoration: none;
+  white-space: nowrap;
 }
 .wh-btn:hover:not(:disabled) { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
 .wh-btn:active:not(:disabled) { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--ink); }
@@ -61,6 +62,7 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   font-size: 19px;
   font-weight: 900;
   background: #fff;
+  white-space: nowrap;
 }
 
 .wh-label { font-family: "Fredoka", sans-serif; }
