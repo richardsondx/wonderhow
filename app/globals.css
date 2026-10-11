@@ -211,6 +211,19 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
 @media (max-width: 960px) { .scene-card { position: static; } }
 .wh-scene { display: block; width: 100%; height: auto; }
 
+/* sample story paintings: slow cinematic drift + fade per step */
+.sample-art { overflow: hidden; animation: artIn 0.8s ease-out; }
+.sample-art img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 3 / 2; object-fit: cover;
+  animation: kenburns 16s ease-in-out infinite alternate;
+}
+@keyframes artIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.1) translate(-1.5%, 1%); }
+}
+
 /* generated story illustrations */
 .story-illus { position: relative; }
 .story-illus img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
