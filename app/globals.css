@@ -173,11 +173,16 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   max-width: 1180px; margin: 0 auto; padding: 22px 24px 0;
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
 }
-.mode-toggle { display: flex; border: 4px solid var(--ink); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 5px 5px 0 var(--ink); }
+.mode-toggle { display: flex; border: 4px solid var(--ink); border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 5px 5px 0 var(--ink); max-width: 100%; }
 .mode-btn {
   display: inline-flex; align-items: center; gap: 10px;
   border: none; background: #fff; padding: 14px 22px;
   font-size: 21px; font-weight: 900; color: var(--ink);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .mode-btn { padding: 12px 14px; font-size: 18px; gap: 8px; }
+  .mode-toggle { border-radius: 18px; }
 }
 .mode-btn.on { color: #fff; }
 .mode-btn + .mode-btn { border-left: 4px solid var(--ink); }
@@ -186,6 +191,7 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   max-width: 1180px; margin: 0 auto; padding: 26px 24px 6px;
   display: flex; gap: 22px; align-items: center;
 }
+.player-head > div:last-child { min-width: 0; }
 .player-icon {
   width: 104px; height: 104px; border: 5px solid var(--ink); border-radius: 30px;
   display: flex; align-items: center; justify-content: center; flex: none;
@@ -198,6 +204,7 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   max-width: 1180px; margin: 0 auto; padding: 18px 24px 0;
   display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; align-items: start;
 }
+.player-main > * { min-width: 0; }
 @media (max-width: 960px) { .player-main { grid-template-columns: 1fr; } }
 
 .scene-card {
@@ -269,6 +276,15 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
 .dot { width: 26px; height: 26px; border-radius: 50%; border: 3px solid var(--ink); background: #fff; padding: 0; }
 .dot.done { background: #c9e7c0; }
 .nav-row { display: flex; gap: 16px; justify-content: space-between; }
+@media (max-width: 560px) {
+  .step-card { padding: 22px 20px; }
+  .nav-row { gap: 12px; }
+  .wh-btn-nav { min-width: 0; flex: 1 1 0; font-size: 21px; padding: 14px 10px; }
+  .wh-btn-nav svg { width: 22px; height: 22px; }
+  .player-top { flex-direction: column; align-items: stretch; }
+  .mode-toggle { width: 100%; min-width: 0; }
+  .mode-btn { flex: 1 1 auto; min-width: 0; justify-content: center; padding: 12px 10px; font-size: 16px; gap: 6px; }
+}
 
 /* ---------- ask page ---------- */
 .ask-page { min-height: 100vh; background: linear-gradient(180deg, #f3e9ff 0%, #fff8ec 70%); padding-bottom: 60px; }
